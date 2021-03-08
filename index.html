@@ -9,21 +9,11 @@
 <body>
 	<h1 class="page-title">Cards app</h1>
 	<main class="panel">
-		<div class="card-view">
+		<div class="card-view" id="card-view">
 			<button class="btn btn-arrow left" id="btn-left" disabled></button>
 			<div class="card-container">
 				<div class="card-wrapper">
 					<figure class="card" tabindex="1">
-						<div class="options-container">
-							<label class="options-label" for="options-checkbox">
-								<div class="btn btn-options" id="btn-options" tabindex="1">···</div>
-							</label>
-							<input type="checkbox" class="options-checkbox" id="options-checkbox">
-							<div class="options" id="options">
-								<button class="btn option" id="option-edit">Edit</button>
-								<button class="btn option" id="option-delete">Delete</button>
-							</div>
-						</div>
 						<img src="assets/avatar-m.jpg" alt="John Smith" class="card-img">
 						<figcaption class="card-desc">
 							<table class="card-table">
@@ -42,6 +32,15 @@
 							</table>
 						</figcaption>
 					</figure>
+					<div class="options-container">
+						<label class="options-label" for="options-checkbox">
+							<div class="btn btn-options" id="btn-options" tabindex="1">···</div>
+						</label>
+						<input type="checkbox" class="options-checkbox" id="options-checkbox">
+						<div class="options" id="options">
+							<button class="btn option" id="option-delete" tabindex="1">Delete</button>
+						</div>
+					</div>
 				</div>
 				<div class="card-wrapper">
 					<figure class="card" tabindex="1">
@@ -110,7 +109,15 @@
 									</select>
 								</td>
 							</tr>
+							<tr class="card-table-row">
+								<td class="card-table-value">
+									<button class="btn btn-submit" id="btn-submit">Save</button>
+								</td>
+							</tr>
 						</table>
+					</div>
+					<div class="options-container">
+						<div class="btn btn-options" id="btn-close" tabindex="1">×</div>
 					</div>
 				</div>
 			</div>
@@ -118,7 +125,7 @@
 		</div>
 
 		<div class="buttons">
-			<button class="btn btn-control add">ADD</button>
+			<button class="btn btn-control add" id="btn-add">ADD</button>
 		</div>
 	</main>
 

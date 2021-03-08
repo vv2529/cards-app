@@ -62,18 +62,20 @@ body {
 }
 .card-wrapper {
 	height: 100%;
+	margin: 0 20px;
 	display: inline-flex;
 	justify-content: center;
 	align-items: center;
+	font-size: 16px;
 }
 .card {
 	display: inline-block;
 	width: 250px;
+	margin: 0;
 	border: 2px solid #a0a0a0;
 	border-radius: 5px;
 	overflow: hidden;
 	background: rgb(0, 45, 90);
-	font-size: 16px;
 }
 .card-img {
 	width: 100%;
@@ -93,18 +95,20 @@ body {
 }
 .card-table-name {
 	flex-grow: 1;
-	text-align: left;
+	display: inline-flex;
+	justify-content: start;
 }
 .card-table-value {
 	flex-grow: 1;
-	text-align: right;
+	display: inline-flex;
+	justify-content: end;
 }
 
 .card-title {
 	width: 0;
 	height: 0;
 	margin: 0;
-	padding: 50%;
+	padding: 50% 50% calc(50% - 50px);
 	border-bottom: 8px solid transparent;
 	white-space: nowrap;
 	display: flex;
@@ -130,8 +134,13 @@ select.card-input {
 .card-input:active {
 	border-color: #fff;
 }
-.input-cell {
-	width: 50%;
+.btn-submit {
+	flex-grow: 1;
+	margin: 2.5px 5px;
+	padding: 5px 20px;
+	border: 1px solid #fff;
+	border-radius: 5px;
+	background: rgb(0, 30, 60);
 }
 
 .btn-arrow {
@@ -168,9 +177,14 @@ select.card-input {
 	color: rgb(50, 100, 50);
 }
 
+.options-container {
+	position: relative;
+	top: calc(10px - 50%);
+	left: -25px;
+	width: 0;
+	height: 0;
+}
 .btn-options {
-	position: absolute;
-	transform: translate(calc(250px - 50%), -50%);
 	width: 40px;
 	height: 40px;
 	border: 1px solid #606060;
@@ -190,10 +204,9 @@ select.card-input {
 }
 
 .options {
-	position: absolute;
-	transform: translate(calc(270px - 100%), calc(50% - 20px));
 	display: none;
 	width: 150px;
+	transform: translate(-100%, 0);
 	padding: 2.5px 0;
 	flex-wrap: wrap;
 	justify-content: stretch;
@@ -209,15 +222,6 @@ select.card-input {
 	margin: 2.5px 5px;
 	padding: 5px 20px;
 	background: #808080;
-}
-
-.options-container {
-	visibility: hidden;
-}
-.card:hover .options-container,
-.card:focus .options-container,
-.card:active .options-container {
-	visibility: visible;
 }
 
 .hidden {
