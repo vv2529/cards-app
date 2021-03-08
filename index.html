@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Cards app</title>
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	<h1 class="page-title">Cards app</h1>
+	<main class="panel">
+		<div class="card-view">
+			<button class="btn btn-arrow left" id="btn-left" disabled></button>
+			<div class="card-container">
+				<div class="card-wrapper">
+					<figure class="card" tabindex="1">
+						<div class="options-container">
+							<label class="options-label" for="options-checkbox">
+								<div class="btn btn-options" id="btn-options" tabindex="1">···</div>
+							</label>
+							<input type="checkbox" class="options-checkbox" id="options-checkbox">
+							<div class="options" id="options">
+								<button class="btn option" id="option-edit">Edit</button>
+								<button class="btn option" id="option-delete">Delete</button>
+							</div>
+						</div>
+						<img src="assets/avatar-m.jpg" alt="John Smith" class="card-img">
+						<figcaption class="card-desc">
+							<table class="card-table">
+								<tr class="card-table-row">
+									<th class="card-table-name">Name:</th>
+									<td class="card-table-value">John Smith</td>
+								</tr>
+								<tr class="card-table-row">
+									<th class="card-table-name">Age:</th>
+									<td class="card-table-value">30</td>
+								</tr>
+								<tr class="card-table-row">
+									<th class="card-table-name">Registered:</th>
+									<td class="card-table-value">7 Feb 2021, 13:05</td>
+								</tr>
+							</table>
+						</figcaption>
+					</figure>
+				</div>
+				<div class="card-wrapper">
+					<figure class="card" tabindex="1">
+						<img src="assets/avatar-f.jpg" alt="Benetha Green" class="card-img">
+						<figcaption class="card-desc">
+							<table class="card-table">
+								<tr class="card-table-row">
+									<th class="card-table-name">Name:</th>
+									<td class="card-table-value">Benetha Green</td>
+								</tr>
+								<tr class="card-table-row">
+									<th class="card-table-name">Age:</th>
+									<td class="card-table-value">45</td>
+								</tr>
+								<tr class="card-table-row">
+									<th class="card-table-name">Registered:</th>
+									<td class="card-table-value">7 Feb 2021, 15:11</td>
+								</tr>
+							</table>
+						</figcaption>
+					</figure>
+				</div>
+				<div class="card-wrapper">
+					<figure class="card" tabindex="1">
+						<img src="assets/avatar-f.jpg" alt="Monica Heins" class="card-img">
+						<figcaption class="card-desc">
+							<table class="card-table">
+								<tr class="card-table-row">
+									<th class="card-table-name">Name:</th>
+									<td class="card-table-value">Monica Heins</td>
+								</tr>
+								<tr class="card-table-row">
+									<th class="card-table-name">Age:</th>
+									<td class="card-table-value">25</td>
+								</tr>
+								<tr class="card-table-row">
+									<th class="card-table-name">Registered:</th>
+									<td class="card-table-value">7 Feb 2021, 15:39</td>
+								</tr>
+							</table>
+						</figcaption>
+					</figure>
+				</div>
+				<div class="card-wrapper hidden" id="form-wrapper">
+					<div class="card">
+						<h2 class="card-title">New card</h2>
+						<table class="card-table">
+							<tr class="card-table-row">
+								<th class="card-table-name">Name:</th>
+								<td class="card-table-value">
+									<input type="text" class="card-input" id="new-name">
+								</td>
+							</tr>
+							<tr class="card-table-row">
+								<th class="card-table-name">Date of birth:</th>
+								<td class="card-table-value">
+									<input type="date" class="card-input" id="new-dob">
+								</td>
+							</tr>
+							<tr class="card-table-row">
+								<th class="card-table-name">Gender:</th>
+								<td class="card-table-value">
+									<select id="new-gender" class="card-input">
+										<option>Male</option>
+										<option>Female</option>
+									</select>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+			<button class="btn btn-arrow right" id="btn-right" disabled></button>
+		</div>
+
+		<div class="buttons">
+			<button class="btn btn-control add">ADD</button>
+		</div>
+	</main>
+
+	<script src="js/main.js"></script>
+</body>
+</html>

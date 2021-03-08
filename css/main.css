@@ -1,0 +1,225 @@
+.btn {
+	all: unset;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	user-select: none;
+	transition: filter 0.05s;
+}
+.btn:hover,
+.btn:focus {
+	filter: brightness(0.9);
+}
+.btn:active {
+	filter: brightness(0.8);
+}
+.btn:disabled {
+	filter: brightness(0.8);
+	cursor: not-allowed;
+}
+* {
+	box-sizing: border-box;
+}
+
+body {
+	width: 100vw;
+	height: 100vh;
+	margin: 0;
+	background: rgb(0, 30, 60);
+	color: #fff;
+	font: 16px/1.5em sans-serif;
+	text-align: center;
+	overflow-x: hidden;
+}
+
+.page-title {
+	display: inline-flex;
+	align-items: center;
+	height: 100px;
+	margin: 0;
+	text-transform: uppercase;
+	font-size: 3rem;
+}
+
+.panel {
+	width: calc(100% - 60px);
+	margin: 0 30px 30px;
+}
+.card-view {
+	margin-bottom: 30px;
+	display: flex;
+	border: 2px solid #a0a0a0;
+	font-size: 0;
+}
+.card-container {
+	flex-grow: 1;
+	height: 440px;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	overflow: hidden;
+}
+.card-wrapper {
+	height: 100%;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+}
+.card {
+	display: inline-block;
+	width: 250px;
+	border: 2px solid #a0a0a0;
+	border-radius: 5px;
+	overflow: hidden;
+	background: rgb(0, 45, 90);
+	font-size: 16px;
+}
+.card-img {
+	width: 100%;
+	border-bottom: 2px solid #a0a0a0;
+}
+.card-desc {
+	width: 100%;
+}
+.card-table {
+	width: 100%;
+	padding: 0 6px 12px;
+}
+.card-table-row {
+	width: 100%;
+	display: flex;
+	margin-top: 10px;
+}
+.card-table-name {
+	flex-grow: 1;
+	text-align: left;
+}
+.card-table-value {
+	flex-grow: 1;
+	text-align: right;
+}
+
+.card-title {
+	width: 0;
+	height: 0;
+	margin: 0;
+	padding: 50%;
+	border-bottom: 8px solid transparent;
+	white-space: nowrap;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.card-input {
+	width: 100%;
+	background: none;
+	outline: none;
+	border: none;
+	border-bottom: 2px solid #a0a0a0;
+	color: #fff;
+	transition: border-color 0.1s;
+}
+select.card-input {
+	border: 2px solid #909090;
+}
+.card-input:hover {
+	border-color: #c0c0c0;
+}
+.card-input:focus,
+.card-input:active {
+	border-color: #fff;
+}
+.input-cell {
+	width: 50%;
+}
+
+.btn-arrow {
+	min-width: 30px;
+	min-height: 100%;
+	background-color: #a0a0a0;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+.btn-arrow.left {
+	background-image: url('../assets/chevron-left.svg');
+}
+.btn-arrow.right {
+	background-image: url('../assets/chevron-right.svg');
+}
+
+.btn-control {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	width: 150px;
+	height: 60px;
+	font-size: 1.5em;
+	font-weight: bold;
+}
+.btn-control.add {
+	background-color: rgb(100, 200, 100);
+}
+.btn-control.add::before {
+	content: '+';
+	font-size: 2em;
+	margin-right: 10px;
+	color: rgb(50, 100, 50);
+}
+
+.btn-options {
+	position: absolute;
+	transform: translate(calc(250px - 50%), -50%);
+	width: 40px;
+	height: 40px;
+	border: 1px solid #606060;
+	border-radius: 50%;
+	box-shadow: 0 0 10px 3px #000;
+	background: #d0d0d0;
+	color: #000;
+	font-weight: bold;
+	font-size: 2em;
+}
+.options-checkbox {
+	width: 0;
+	height: 0;
+	position: absolute;
+	top: -99%;
+	visibility: hidden;
+}
+
+.options {
+	position: absolute;
+	transform: translate(calc(270px - 100%), calc(50% - 20px));
+	display: none;
+	width: 150px;
+	padding: 2.5px 0;
+	flex-wrap: wrap;
+	justify-content: stretch;
+	background: #404040;
+	box-shadow: 0 0 10px 3px #000;
+	text-align: left;
+}
+.options-checkbox:checked + .options {
+	display: flex;
+}
+.option {
+	flex-grow: 1;
+	margin: 2.5px 5px;
+	padding: 5px 20px;
+	background: #808080;
+}
+
+.options-container {
+	visibility: hidden;
+}
+.card:hover .options-container,
+.card:focus .options-container,
+.card:active .options-container {
+	visibility: visible;
+}
+
+.hidden {
+	display: none;
+}
