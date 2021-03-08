@@ -1,4 +1,4 @@
-function addCardFromJSON(JSONData, insertBefore) {
+function addCardFromJSON(JSONData, insertBefore, callback) {
 	const { id } = JSON.parse(JSONData);
 	const HTMLText = parseJSONtoHTML(JSONData);
 	insertBefore.insertAdjacentHTML('beforebegin', HTMLText);
@@ -19,12 +19,15 @@ function addCardFromJSON(JSONData, insertBefore) {
 		const elem = e.target;
 		if (elem.classList.contains('option-delete')) {
 			elem.parentElement.parentElement.parentElement.remove();
+			callback();
 		}
 	});
 
 	document.getElementById(`option-delete-${id}`).addEventListener('blur', e => {
-		document.getElementById(`btn-options-${id}`).click();
+		document.body.click();
 	});
+
+	callback();
 }
 
 function parseJSONtoHTML(JSONData) {
