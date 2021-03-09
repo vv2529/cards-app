@@ -1,6 +1,6 @@
-function addCardFromJSON(JSONData, insertBefore, callback) {
-	const { id } = JSON.parse(JSONData);
-	const HTMLText = parseJSONtoHTML(JSONData);
+function addCard(cardObject, insertBefore, callback = () => {}) {
+	const { id } = cardObject;
+	const HTMLText = parseJSONtoHTML(cardObject);
 	insertBefore.insertAdjacentHTML('beforebegin', HTMLText);
 
 	document.getElementById(`card-wrapper-${id}`).addEventListener('keypress', e => {
@@ -30,8 +30,7 @@ function addCardFromJSON(JSONData, insertBefore, callback) {
 	callback();
 }
 
-function parseJSONtoHTML(JSONData) {
-	const data = JSON.parse(JSONData);
+function parseJSONtoHTML(data) {
 	return `<div class="card-wrapper" id="card-wrapper-${data.id}">
 	<figure class="card" tabindex="1">
 		<img src="assets/avatar-${data.gender == 'male' ? 'm' : 'f'}.jpg" alt="${data.name}" class="card-img">
@@ -70,4 +69,4 @@ function timeToString(timestamp) {
 	return dateString.slice(4, dateString.indexOf('GMT') - 4);
 }
 
-export { addCardFromJSON };
+export { addCard };
