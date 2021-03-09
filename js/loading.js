@@ -10,4 +10,8 @@ function uploadCards({ name, dob, gender }, callback) {
 		then(card => callback(card));
 }
 
-export { downloadCards, uploadCards };
+function deleteCard(id) {
+	fetch(`../php/delete.php?id=${id}`);
+}
+
+export { downloadCards, uploadCards, deleteCard };

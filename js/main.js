@@ -1,5 +1,5 @@
 import { addCard } from './renderer.js';
-import { downloadCards, uploadCards } from './loading.js';
+import { downloadCards, uploadCards, deleteCard } from './loading.js';
 
 /*
  * Event listeners
@@ -13,6 +13,11 @@ const form = document.getElementById('form-wrapper');
 function updateScrollButtons() {
 	btnLeft.disabled = (container.scrollTop === 0);
 	btnRight.disabled = (container.scrollTop === container.scrollTopMax);
+}
+
+function deleteAndUpdateCard(id) {
+	deleteCard(id);
+	updateScrollButtons();
 }
 
 document.getElementById('btn-left').addEventListener('click', e => {
@@ -61,7 +66,7 @@ form.addEventListener('submit', e => {
 		document.getElementById('new-name').value = '';
 		document.getElementById('new-dob').value = '';
 		document.getElementById('new-gender').selectedIndex = 0;
-		addCard(card, document.getElementById('form-wrapper'), updateScrollButtons);
+		addCard(card, document.getElementById('form-wrapper'), deleteAndUpdateCard, updateScrollButtons);
 	});
 });
 
@@ -71,5 +76,6 @@ form.addEventListener('submit', e => {
 
 downloadCards(cards => {
 	document.getElementById('loading-indicator').remove();
-	cards.forEach(card => addCard(card, document.getElementById('form-wrapper'), updateScrollButtons));
+	cards.forEach(card => addCard(card, document.getElementById('form-wrapper'), deleteAndUpdateCard));
+	updateScrollButtons();
 });

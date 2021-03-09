@@ -1,4 +1,4 @@
-function addCard(cardObject, insertBefore, callback = () => {}) {
+function addCard(cardObject, insertBefore, onDelete = () => {}, onFinish = () => {}) {
 	const { id } = cardObject;
 	const HTMLText = parseJSONtoHTML(cardObject);
 	insertBefore.insertAdjacentHTML('beforebegin', HTMLText);
@@ -19,7 +19,7 @@ function addCard(cardObject, insertBefore, callback = () => {}) {
 		const elem = e.target;
 		if (elem.classList.contains('option-delete')) {
 			elem.parentElement.parentElement.parentElement.remove();
-			callback();
+			onDelete(id);
 		}
 	});
 
@@ -27,7 +27,7 @@ function addCard(cardObject, insertBefore, callback = () => {}) {
 		document.body.click();
 	});
 
-	callback();
+	onFinish(id);
 }
 
 function parseJSONtoHTML(data) {
