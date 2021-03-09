@@ -1,7 +1,12 @@
 function downloadCards(callback) {
 	fetch('../php/download.php').
 		then(response => response.json()).
-		then(cards => callback(cards));
+		then(cards => callback(cards)).
+		catch(() => {
+			fetch('../json/example.json').
+			then(response => response.json()).
+			then(cards => callback(cards));
+		});
 }
 
 function uploadCards({ name, dob, gender }, callback) {
