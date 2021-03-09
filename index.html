@@ -13,20 +13,20 @@
 			<button class="btn btn-arrow left" id="btn-left" disabled></button>
 			<div class="card-container" id="card-container">
 				<div class="loading-indicator" id="loading-indicator">Loading...</div>
-				<div class="card-wrapper hidden" id="form-wrapper">
+				<form class="card-wrapper hidden" id="form-wrapper">
 					<div class="card">
 						<h2 class="card-title">New card</h2>
 						<table class="card-table">
 							<tr class="card-table-row">
 								<th class="card-table-name">Name:</th>
 								<td class="card-table-value">
-									<input type="text" class="card-input" id="new-name">
+									<input type="text" required class="card-input" id="new-name">
 								</td>
 							</tr>
 							<tr class="card-table-row">
 								<th class="card-table-name">Date of birth:</th>
 								<td class="card-table-value">
-									<input type="date" class="card-input" id="new-dob">
+									<input type="date" required class="card-input" id="new-dob">
 								</td>
 							</tr>
 							<tr class="card-table-row">
@@ -48,7 +48,7 @@
 					<div class="options-container">
 						<div class="btn btn-options" id="btn-close" tabindex="1">×</div>
 					</div>
-				</div>
+				</form>
 			</div>
 			<button class="btn btn-arrow right" id="btn-right" disabled></button>
 		</div>

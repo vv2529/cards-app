@@ -8,6 +8,7 @@ import { downloadCards, uploadCards } from './loading.js';
 const btnLeft = document.getElementById('btn-left');
 const btnRight = document.getElementById('btn-right');
 const container = document.getElementById('card-container');
+const form = document.getElementById('form-wrapper');
 
 function updateScrollButtons() {
 	btnLeft.disabled = (container.scrollTop === 0);
@@ -50,12 +51,25 @@ document.getElementById('btn-close').addEventListener('keypress', e => {
 
 window.addEventListener('resize', updateScrollButtons);
 
+form.addEventListener('submit', e => {
+	e.preventDefault();
+	uploadCards({
+		name: document.getElementById('new-name').value,
+		dob: document.getElementById('new-dob').value,
+		gender: document.getElementById('new-gender').value,
+	}, card => {
+		document.getElementById('new-name').value = '';
+		document.getElementById('new-dob').value = '';
+		document.getElementById('new-gender').selectedIndex = 0;
+		addCard(card, document.getElementById('form-wrapper'), updateScrollButtons);
+	});
+});
+
 /*
  * Loading cards
  */
 
 downloadCards(cards => {
 	document.getElementById('loading-indicator').remove();
-	cards.forEach(card => addCard(card, document.getElementById('form-wrapper')));
-	updateScrollButtons();
+	cards.forEach(card => addCard(card, document.getElementById('form-wrapper'), updateScrollButtons));
 });

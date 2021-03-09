@@ -4,4 +4,10 @@ function downloadCards(callback) {
 		then(cards => callback(cards));
 }
 
-export { downloadCards };
+function uploadCards({ name, dob, gender }, callback) {
+	fetch(encodeURI(`../php/upload.php?name=${name}&dob=${dob}&gender=${gender}`)).
+		then(response => response.json()).
+		then(card => callback(card));
+}
+
+export { downloadCards, uploadCards };

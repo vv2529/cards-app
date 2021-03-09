@@ -64,7 +64,7 @@ function parseJSONtoHTML(data) {
 }
 
 function timeToString(timestamp) {
-	const date = new Date(+timestamp);
+	const date = new Date(+timestamp*1000);
 	const dateString = date.toString();
 	return dateString.slice(4, dateString.indexOf('GMT') - 4);
 }
