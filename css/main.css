@@ -46,6 +46,20 @@ body {
 	cursor: default;
 	user-select: none;
 }
+.page-subtitle {
+	margin: -25px 0 35px;
+	color: #fffa;
+}
+.page-subtitle-link {
+	color: inherit;
+	text-decoration: none;
+}
+.page-subtitle-link:hover,
+.page-subtitle-link:focus,
+.page-subtitle-link:active {
+	color: #fffd;
+	text-decoration: underline;
+}
 
 .loading-indicator {
 	display: flex;

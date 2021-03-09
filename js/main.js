@@ -10,6 +10,8 @@ const btnRight = document.getElementById('btn-right');
 const container = document.getElementById('card-container');
 const form = document.getElementById('form-wrapper');
 
+let containerScrollTop = 0;
+
 function updateScrollButtons() {
 	btnLeft.disabled = (container.scrollTop === 0);
 	btnRight.disabled = (container.scrollTop === container.scrollTopMax);
@@ -21,12 +23,12 @@ function deleteAndUpdateCard(id) {
 }
 
 document.getElementById('btn-left').addEventListener('click', e => {
-	container.scrollTop = Math.max(container.scrollTop - container.offsetHeight, 0);
+	container.scrollTop = containerScrollTop = Math.max(container.scrollTop - container.offsetHeight, 0);
 	updateScrollButtons();
 });
 
 document.getElementById('btn-right').addEventListener('click', e => {
-	container.scrollTop = Math.min(container.scrollTop + container.offsetHeight, container.scrollTopMax);
+	container.scrollTop = containerScrollTop = Math.min(container.scrollTop + container.offsetHeight, container.scrollTopMax);
 	updateScrollButtons();
 });
 
@@ -39,7 +41,7 @@ document.body.addEventListener('click', e => {
 
 document.getElementById('btn-add').addEventListener('click', e => {
 	document.getElementById('form-wrapper').classList.remove('hidden');
-	container.scrollTop = container.scrollTopMax;
+	container.scrollTop = containerScrollTop = container.scrollTopMax;
 	document.getElementById('new-name').focus();
 	updateScrollButtons();
 });
@@ -57,6 +59,11 @@ document.getElementById('btn-close').addEventListener('keypress', e => {
 });
 
 window.addEventListener('resize', updateScrollButtons);
+
+container.addEventListener('scroll', e => {
+	console.log(container.scrollTop);
+	container.scrollTop = containerScrollTop;
+});
 
 form.addEventListener('submit', e => {
 	e.preventDefault();
