@@ -14,7 +14,7 @@ let containerScrollTop = 0;
 
 function updateScrollButtons() {
 	btnLeft.disabled = (container.scrollTop === 0);
-	btnRight.disabled = (container.scrollTop === container.scrollTopMax);
+	btnRight.disabled = (container.scrollTop === container.scrollHeight - container.offsetHeight);
 }
 
 function deleteAndUpdateCard(id) {
@@ -28,7 +28,8 @@ document.getElementById('btn-left').addEventListener('click', e => {
 });
 
 document.getElementById('btn-right').addEventListener('click', e => {
-	container.scrollTop = containerScrollTop = Math.min(container.scrollTop + container.offsetHeight, container.scrollTopMax);
+	container.scrollTop = containerScrollTop =
+		Math.min(container.scrollTop + container.offsetHeight, container.scrollHeight - container.offsetHeight);
 	updateScrollButtons();
 });
 
@@ -41,7 +42,7 @@ document.body.addEventListener('click', e => {
 
 document.getElementById('btn-add').addEventListener('click', e => {
 	document.getElementById('form-wrapper').classList.remove('hidden');
-	container.scrollTop = containerScrollTop = container.scrollTopMax;
+	container.scrollTop = containerScrollTop = container.scrollHeight - container.offsetHeight;
 	document.getElementById('new-name').focus();
 	updateScrollButtons();
 });

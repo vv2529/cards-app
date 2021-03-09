@@ -146,6 +146,9 @@ body {
 	justify-content: center;
 	align-items: center;
 }
+.form-value {
+	width: 50%;
+}
 .card-input {
 	width: 100%;
 	background: none;
@@ -154,6 +157,9 @@ body {
 	border-bottom: 2px solid #a0a0a0;
 	color: #fff;
 	transition: border-color 0.1s;
+}
+.card-input option {
+	color: #000;
 }
 select.card-input {
 	border: 2px solid #909090;
