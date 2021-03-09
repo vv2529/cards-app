@@ -49,7 +49,7 @@ addCardFromJSON(JSON.stringify({
 	id: 0,
 	name: 'John Smith',
 	age: 30,
-	registrationTime: 1615231721000,
+	registrationTime: 1615231721,
 	gender: 'male',
 }), document.getElementById('form-wrapper'), updateScrollButtons);
 
@@ -57,7 +57,7 @@ addCardFromJSON(JSON.stringify({
 	id: 1,
 	name: 'Benetha Green',
 	age: 45,
-	registrationTime: 1615231731000,
+	registrationTime: 1615231731,
 	gender: 'female',
 }), document.getElementById('form-wrapper'), updateScrollButtons);
 
@@ -65,7 +65,7 @@ addCardFromJSON(JSON.stringify({
 	id: 2,
 	name: 'Monica Heins',
 	age: 25,
-	registrationTime: 1615231741000,
+	registrationTime: 1615231741,
 	gender: 'female',
 }), document.getElementById('form-wrapper'), updateScrollButtons);
 
@@ -73,6 +73,6 @@ addCardFromJSON(JSON.stringify({
 	id: 3,
 	name: 'Edward Crew',
 	age: 35,
-	registrationTime: 1615231751000,
+	registrationTime: 1615231751,
 	gender: 'male',
 }), document.getElementById('form-wrapper'), updateScrollButtons);
