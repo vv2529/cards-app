@@ -1,3 +1,6 @@
+:required {
+	box-shadow: initial;
+}
 .btn {
 	all: unset;
 	display: flex;
@@ -40,6 +43,8 @@ body {
 	margin: 0;
 	text-transform: uppercase;
 	font-size: 3rem;
+	cursor: default;
+	user-select: none;
 }
 
 .loading-indicator {

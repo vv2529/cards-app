@@ -39,6 +39,8 @@ document.body.addEventListener('click', e => {
 
 document.getElementById('btn-add').addEventListener('click', e => {
 	document.getElementById('form-wrapper').classList.remove('hidden');
+	container.scrollTop = container.scrollTopMax;
+	document.getElementById('new-name').focus();
 	updateScrollButtons();
 });
 
