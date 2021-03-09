@@ -1,5 +1,5 @@
 import { addCard } from './renderer.js';
-import { loadCards } from './download.js';
+import { downloadCards, uploadCards } from './loading.js';
 
 /*
  * Event listeners
@@ -54,7 +54,7 @@ window.addEventListener('resize', updateScrollButtons);
  * Loading cards
  */
 
-loadCards(cards => {
+downloadCards(cards => {
 	document.getElementById('loading-indicator').remove();
 	cards.forEach(card => addCard(card, document.getElementById('form-wrapper')));
 	updateScrollButtons();
